@@ -1,0 +1,374 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+		backgroundcolor=\color{black!5}, 
+		commentstyle=\color{codegreen},
+		keywordstyle=\bfseries\color{magenta},
+		numberstyle=\sffamily\tiny\color{black!60},
+		stringstyle=\color{green!50!black},
+		basicstyle=\ttfamily\footnotesize,
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		keepspaces=true,                 
+		numbers=left,                    
+		numbersep=5pt,                  
+		showspaces=false,                
+		showstringspaces=false,
+		showtabs=false,                  
+		tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+		backgroundcolor=\color{black!5}, 
+		basicstyle=\ttfamily\footnotesize\color{black}, 
+		commentstyle=\color{black}, 
+		keywordstyle=\color{black},
+		numberstyle=\color{black!5},
+		stringstyle=\color{black}, 
+		showspaces=false,
+		showstringspaces=false, 
+		showtabs=false, 
+		tabsize=2, 
+		numbers=none, 
+		breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+	{\sffamily\Large\bfseries} 
+	{\thesection}{1em}{} 
+\titleformat{\subsection}
+	{\sffamily\large\bfseries}   
+	{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+	{\sffamily\normalsize\bfseries} 
+	{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 12-03-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Proseguiamo quindi lo studio dal punto di vista giuridico della figura dell'\textit{imprenditore}, e quindi dell'\textit{impresa}.
+
+\subsection{Statuto dell'imprenditore}
+L'obiettivo del testo giuridico che regola l'impresa, cioè lo \textbf{statuto dell'imprenditore}, è quello di definire il \textit{perimetro} all'interno del cui l'impresa può muoversi.
+
+Bisogna innanzitutto distinguere l'\textbf{oggetto} dell'impresa in:
+\begin{itemize}
+	\item Impresa commerciale (cioè tutto ciò che non è agricolo);
+	\item Impresa agricola.
+\end{itemize}
+Si può poi distinguere la \textbf{dimensione} dell'impresa:
+\begin{itemize}
+	\item Piccola impresa; 
+	\item Medio/grande impresa.
+\end{itemize}
+Infine, si può distinguere sulla natura del \textbf{soggetto}:
+\begin{itemize}
+	\item Impresa individuale;
+	\item Impresa collettiva, che si divide a sua volta in:
+		\begin{itemize}
+			\item Impresa societaria;
+			\item Impresa pubblica;
+			\item Fondazioni e associazioni.
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{Registro delle imprese}
+Il \textbf{registro delle imprese} è uno strumento, istituito dalle camere di commercio (enti pubblici locali non territoriali, dotati di autonomia funzionale), che tiene conto di tutti gli \textit{atti} (costituzione dell'impresa, richieste di finanziamento da terzi, ec...) e i \textit{fatti} riguardanti le imprese iscritte.
+Dal registro delle imprese si può attingere ai \textit{prospetti ufficiali} dell'impresa (bilanci, storici, ecc...) sotto versamento di una certa somma.
+L'iscrizione è solitamente \textbf{dichiaratava}, anche se in alcuni casi è \textit{costitutiva} (S.p.A.) o solamente \textit{pubblicitaria} (piccoli imprenditori).
+
+L'esistenza di un registro delle imprese ha diversi effetti dal punto di vista legale:
+\begin{itemize}
+	\item I fatti dichiarati pubblicamente sono assunti noti da terzi;
+	\item Di contro, i fatti non dichiarati non sono opponibili a terzi (a meno di non dimostrarne la conoscenza).
+\end{itemize}
+
+\subsubsection{Scritture contabili}
+Le scritture contabili sono documenti che contengono i singoli atti dell'impresa, che l'impresa è obbligata a tenere (e conservare per una durata di 10 anni).
+Queste includono:
+\begin{itemize}
+	\item Tutte le scritture richieste dalla natura e dalla dimensione dell'impresa (libro mastro, di cassa, di magazzino, ecc...);
+	\item \textbf{Libro giornale:} registro cronologico-analitico;
+	\item \textbf{Libro degli inventari:} registro periodico-sistematico;
+	\item \textbf{Originali} della corrispondenza commerciale ricevuta e \textbf{copie} di quella spedita.
+\end{itemize}
+
+Gli effetti legali delle scritture contabili sono considerevoli in quanto queste rappresentano prova, con efficacia \textbf{probatoria}.
+
+\subsubsection{Ausiliari dell'imprenditore}
+Gli ausiliari dell'impresa sono divisi in due categorie:
+\begin{itemize}
+	\item \textbf{Ausiliari subordinati:} cioè subordinati all'imprenditore da un rapporto di lavoro. Questi possono essere:
+		\begin{itemize}
+			\item \textbf{Institori:} coloro che sono preposti dal titolare all'esercizio dell'impresa commerciale;
+			\item \textbf{Procuratori:} svolgono sempre l'opera di esercizio dell'impresa, ma sono sottoposti agli institori;
+			\item \textbf{Commessi:} compiono gli incarichi gli atti che ordinariamente comporta la specie di operazioni delle quali sono incaricati.
+		\end{itemize}
+	\item \textbf{Ausiliari autonomi:} chiamati informalmente \textit{partite IVA}, legati all'imprenditore da un rapporto di prestazione d'opera (restano quindi indipendenti).
+\end{itemize}
+
+Gli ausiliari possono concludere affari con terzi per conto dell'imprenditore, e quindi si pone il problema della \textbf{rappresentanza}.
+In generale si richiede il conferimento della \textbf{procura}, cioè il potere di rappresentanza esiste nei limiti fissati dalla procura.
+
+Una regola speciale è rappresentata dalla \textbf{rappresentanza commerciale}: gli ausiliari subordinati sono automaticamente investiti dal potere di rappresentanza, per la sola natura della loro attività. Chiaramente, ogni figura ha il suo livello di rappresentanza (il commesso avrà meno potere di rappresentanza di un procuratore o un institore).
+
+\subsection{Azienda}
+Fino ad ora abbiamo parlato d'impresa, e di riflesso della figura dell'imprenditore.
+Vediamo adesso alla definizione dell'\textbf{azienda}, intesa come \textit{il complesso dei beni organizzati dall'imprenditore all'esercizio dell'impresa}.
+
+In questo, ad esempio, i \textbf{liberi professionisti} non possono considerarsi azienda, in quanto il libero professionista stesso non è imprenditore: diventa tale solo nel caso in cui svolga un'attività che di per sé è un'attivita d'impresa, e non la sua sola prestazione intellettuale.
+
+Si possono quindi distinguere 3 segni distintivi dell'azienda:
+\begin{itemize}
+	\item \textbf{Ditta:} il nome sotto il quale l'imprenditore esercita l'attività d'impresa.
+		E' un segno necessario, e deve rispettare 2 principi: \textbf{verità} e \textbf{novità}. 
+		
+		Si applica in questo caso di sole imprese individuali.
+		Nel caso di imprese societarie si parla invece di \textbf{ragione sociale} o \textbf{denominazione sociale}.
+
+		Dovrà quindi contenere il cognome o la sigla dell'imprenditore (altrimenti si considera irregolare e rientra nei segni distintivi atipici).
+		La ditta può inoltre rimanere dopo la cessione dell'attività a terzi, in quanto il principio di verità non viene invalidato (questo non significa che la ditta non può comunque essere cambiata);
+
+	\item \textbf{Insegna:} segno distintivo del locale nel quale si svolge l'attività di imprenditore, può corrispondere o non corrispondere alla ditta. Deve avere \textbf{liceità}, \textbf{veridicità} ed \textbf{originalità};
+
+	\item \textbf{Marchio:} segno distintivo del prodotto o del servizio fornito dall'impresa. Qui si può distinguere in:
+		\begin{itemize}
+			\item \textbf{Marchio di fabbrica:} apposto dal produttore;
+			\item \textbf{Marchio di commercio:} apposto da colui che commercializza il prodotto;
+			\item \textbf{Marchio di forma:} il marchio può essere rappresentato da diverse qualità, tra cui una sigla, un motto, un immagine, un \textit{jingle} musicale o la \textit{forma} stessa del prodotto distinguiamo infatti marchi \textbf{denominativi}, \textbf{figurativi} o \textbf{misti};
+		\end{itemize}
+		I requisiti del marchio sono \textbf{originalità}, \textbf{novità}, \textbf{conformità} e la non violazione dei diritti esclusivi di terzi (ad esempio, i \textbf{diritti d'autore}).
+
+		Il \textbf{diritto all'uso} del marchio da parte di un azienda si acquista con:
+		\begin{itemize}
+			\item \textbf{Registrazione} del marchio, i marchi celebri sono più protetti. Un marchio si può perdere per \textbf{volgarizzazione}, cioè quando diventa una parola di uso comune;
+			\item \textbf{Uso di fatto}. 
+		\end{itemize}
+
+		Il marchio può infine essere ceduto, concesso in licenza o in merchandising.
+		
+\end{itemize}
+
+\subsubsection{Diritti di privativa}
+I diritti di privativa sono la categoria di cui fanno parte il \textbf{diritto di autore}, il \textbf{diritto di inventore} e il \textbf{brevetto}.
+\begin{itemize}
+	\item \textbf{Diritto d'autore:} si applica a beni immateriali (opere dell'ingegno di carattere creativo), e si distinguno nel:
+		\begin{itemize}
+			\item \textbf{Diritto morale} d'autore, cioè la paternità dell'opera;
+			\item \textbf{Diritto patrimoniale} d'autore, cioè il diritto di pubblicare l'opera e utilizzarla economicamente.
+		\end{itemize}
+	\item \textbf{Diritto d'inventore:} si tratta di idee creative che appartengono al campo della tecnica. E' caratterizzato da \textbf{industrialità}, \textbf{liceità}, e infine \textbf{novità intrinseca} e \textbf{novità estrinseca}, cioè rispettivamente la capacità di incrementare il patrimonio tecnico presente (\textit{intrinseca}) e la mancata divulgazione (\textit{estrinseca});
+	\item \textbf{Brevetto:} mezzo attraverso il quale si rende \textit{invenzione} cpò che prima era pubblico dominio, e quindi permette all'inventore di capitalizzare sulla sua opera. Decade, può essere espropiato e concesso in licenza, ed è trasferibile \textit{inter vivos} o \textit{mortis causa}.
+\end{itemize}
+
+\subsection{Società}
+Entriamo quindi nel dettaglio delle società, cioè delle imprese collettive.
+In particolare, una società è un contratto, attraverso il quale \textit{due o più persone conferiscono beni o servizi per l'esercizio in comune di un'attività economica allo scopo di dividerne gli utili}.
+
+Il \textit{conferimento} rappresenta le prestazioni in cui le parti della società si obbligano.
+Dal punto di vista pratico, questo è rappresentato semplicemente da mezzi finanziari, o mezzi di produzione, immobili, credito, ecc...
+Il conferimento del lavoro (\textbf{socio d'opera}) varia invece di società in società.
+L'\textit{esercizio in comune} è preordinato alla realizzazione di un risultato unico, nella prospettiva della \textit{divisione degli utili}. 
+
+\subsubsection{Scopo della società}
+Si può distinguere in diverse categorie di scopo della società:
+\begin{itemize}
+	\item \textbf{Lucrativo:} svolgimento dell'attività d'impresa per \textit{produrre utile} (\textbf{lucro oggettivo}) destinato ad essere diviso fra i soci (\textbf{lucro soggettivo});
+	\item \textbf{Mutualistico:} tipico delle \textit{società cooperative}, atto a fornire beni o servizi od occasioni di lavoro, direttamente ai soci, a condizioni più vantaggiose di quelle che otterrebbero sul mercato;
+	\item \textbf{Consortile:} vantaggio patrimoniale diretto, riguarda i consorzi fra due o più imprese.
+\end{itemize}
+
+\subsubsection{Tipi di società}
+Ripercorriamo quindi i vari tipi di società:
+\begin{itemize}
+	\item \textbf{Lucrative:}
+		\begin{itemize}
+			\item \textbf{Società di persone:}
+				\begin{itemize}
+					\item Società semplice (S.s.) (solo agricole);
+					\item Società in nome collettivo (S.n.c.);
+					\item Soietà in accomandita semplice (S.a.s.).
+				\end{itemize}
+			\item \textbf{Società di capitali:}
+				\begin{itemize}
+					\item Società in accomandita per azioni (S.a.p.a.);
+					\item Società per azioni (S.p.A.);
+					\item Società a responsabilità limitata (S.r.l).
+				\end{itemize}
+		\end{itemize}
+	\item \textbf{Mutualistiche:}
+		\begin{itemize}
+			\item \textbf{Società cooperative:}
+				\begin{itemize}
+					\item Società cooperativa a responsabilità limitata;
+					\item Società cooperativa a responsabilità illimitata;
+				\end{itemize}
+			\item Mutue assicuratrici.
+		\end{itemize}
+	\item \textbf{Consortile:} ne possono far parte tutti i tipi tranne la società semplice.
+\end{itemize}
+
+Inoltre possiamo distinguere tra società \textbf{for profit} e \textbf{not for profit}, nonché la categoria ibrida delle \textit{società benefit}.
+
+Nelle società in \textit{accomandita} (S.a.s. e S.a.p.a.), si può distinguere fra soci \textbf{accomandanti} e soci \textbf{accomandatari}.
+I \textit{soci accomandanti} sono del tutto identici ai soci delle \textbf{società di persone}, mentre i \textit{soci accomandatari} sono del tutto identici ai soci delle \textbf{società di capitali}.
+
+Una delle differenze fra le società di persone e di capitali è rappresentata dalla \textbf{personalità giuridica}.
+Le società di capitali hanno personalità giuridica: risponde la società con il proprio capitale, mentre nelle società di persone rispondono i soci con il \textit{loro} capitale.
+
+Fondamentalmente il patrimonio dei soci e il patrimonio della società nelle società di capitali sono fra di loro completamente separati: i creditori personali non possono aggredire il patrimonio sociale, e viceversa i creditori sociali non possono aggredire il patrimonio personale.
+
+Nelle società di persone vale invece l'\textbf{autonomia patrimoniale}, che possiamo intendere come una versione più debole della \textbf{personalità giuridica}.
+In questo caso i creditori della società non possono comunque aggredire \textit{direttamente} il patrimonio personale dei soci, quando questi sono illimitatamente responsabili (\textit{beneficio di escussione}).
+I creditori personali possono invece chiedere la liquidazione della quota in società dei loro debitori, cioè che questa venga venduta.
+
+I patrimoni dei soci e della società nel caso delle società di persone sono quindi \textit{relativamente} separati fra di loro: esistono modalità secondo le quali possono finire a mescolarsi.
+
+\end{document}
