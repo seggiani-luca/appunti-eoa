@@ -1,0 +1,298 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+		backgroundcolor=\color{black!5}, 
+		commentstyle=\color{codegreen},
+		keywordstyle=\bfseries\color{magenta},
+		numberstyle=\sffamily\tiny\color{black!60},
+		stringstyle=\color{green!50!black},
+		basicstyle=\ttfamily\footnotesize,
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		keepspaces=true,                 
+		numbers=left,                    
+		numbersep=5pt,                  
+		showspaces=false,                
+		showstringspaces=false,
+		showtabs=false,                  
+		tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+		backgroundcolor=\color{black!5}, 
+		basicstyle=\ttfamily\footnotesize\color{black}, 
+		commentstyle=\color{black}, 
+		keywordstyle=\color{black},
+		numberstyle=\color{black!5},
+		stringstyle=\color{black}, 
+		showspaces=false,
+		showstringspaces=false, 
+		showtabs=false, 
+		tabsize=2, 
+		numbers=none, 
+		breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+	{\sffamily\Large\bfseries} 
+	{\thesection}{1em}{} 
+\titleformat{\subsection}
+	{\sffamily\large\bfseries}   
+	{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+	{\sffamily\normalsize\bfseries} 
+	{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 19-03-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Riprendiamo la discussione delle società di capitali, e in praticolare delle S.p.A.
+
+\subsubsection{Assemblea}
+I soci si costituiscono in \textbf{assemblea}, che può essere \textit{ordinaria} o \textit{straordinaria} (ad esempio, è straordinaria l'assemblea che si costituisce in fase di liquidazione, ma non lo è quella che si costituisce in fase di cessione).
+
+I soci dell'assemblea, che si convoca nella sede legale, con presenza del presidente (solitamente il presidente della società), non è considerata valida alla prima convocazione se si presenta il meno del 50\% (al minimo, può essere alzato da statuto) della quota sociale (si guarda alle \textit{quote} e non alle \textit{teste}).
+
+\subsubsection{Consiglio di amministrazione}
+Nelle società di capitali l'amministrazione, come abbiamo visto, può essere anche affidata ai non soci.
+
+Notiamo però la (forse già riportata) dicotomia fra il comportamento dei soci e il comportamento degli amministratori, se questi sono esterni: se il tornaconto degli amministratori è ad esempio quello di ricavare un vantaggio dalle azioni, o comunque dalla performance sul breve termine della società, questi implementeranno allora politiche che massimizzano il profitto sul breve termine ma magari hanno delle conseguenze negative sul lungo termine.
+Di contro i soci vorranno, nell'interesse di mantenere il controllo della società per tempi più lunghi, implementare politiche più conservative, o comunque meno rischiose sul breve termine e atte alla conservazione sul lungo termine.
+Questo conflitto è oggi presente in maniera anche abbastanza estesa in molte grandi società.
+
+L'\textbf{amministratore delegato} è colui che viene nominato dal consiglio per detenere poteri decisionali più importanti, e in qualche modo rappresentare il volere del consiglio di amministrazione stesso.
+In questo si distingue dall'eventuale \textit{amministratore unico}.
+
+\subsubsection{Collegio sindacale}
+Il collegio sindacale è costuito da membri sia soci che non soci.
+Fa da organo di vigilanza, cioè vigila sull'assetto organizzativo, amministrativo e contabile della società, e eventualmente subentra in ruolo amministrativo (in caso di mancanze da parte degli altri organi). 
+
+\subsection{Società a responsabilità limitata}
+Abbiamo visto come nelle S.r.l. non parliamo di azioni, ma di \textbf{quote di partecipazione} (non sono previste azioni).
+
+Il capitale sociale minimo è di 10.000 €, e non è permessa l'emissione di obbligazioni.
+
+Non è obbligatoria la presenza di un collegio sindacale, e le regole di funzionamento dell'assemblea sono semplificate.
+Gli amministratori, inoltre, devono essere obbligatoriamente soci.
+
+Esistono una variante dell'S.r.l., l \textit{S.r.l. a un euro}, disciplina di riferimento \textbf{S.r.l. semplificata} (S.r.l.s.).
+Questa richiede minori costi di costituzione ed è stata pensata per favorire l'imprenditorialità giovanile.
+
+\subsection{Società in accomandita}
+Le società in accomandita rappresentano la via di mezzo fra società di persone e società di capitali.
+Sono rappresentate dalle S.a.s. e dalle S.a.p.a.
+
+Abbiamo visto come si distinguono per la differenza fra soci \textit{accomandatari} e soci \textit{accomandati}, che dispongono rispettivamente di responsabilità illimitata e limitata.
+
+\subsection{Titoli di credito}
+Iniziamo a parlare dei \textbf{titoli di credito} partendo dalle azioni.
+
+\subsubsection{Azioni}
+I \textit{titoli azionari}, comunemente \textbf{azioni}, sono documenti che rappresentano le quote di partecipazione nelle S.p.a. (S.a.s. e S.r.l. non prevedono azioni).
+
+Le azioni possono essere di 2 tipi rispetto alla proprietà:
+\begin{itemize}
+	\item \textbf{Azioni nominative:} intestate a nome di una persona fisica o giuridica, il cui nome è riportato sull'azione, e su un registro tenuto dalla società emittente (il cosiddetto \textbf{libro soci});
+	\item \textbf{Azioni al portatore:} il trasferimento di questo tipo di azione avviene mediante la semplice consegna del titolo all'acquirente. In questo caso il possessore del titolo è legittimato all'esercizio dei suoi diritti di socio previa la sola presentazione del titolo della società. 
+\end{itemize}
+
+Si può poi distinguere fra diverse categorie di azione (quasi tutte nominative tranne le \textit{azioni di risparmio}), divise in 2 macrocategorie:
+\begin{itemize}
+	\item \textbf{Azioni ordinarie}, caratterizzate dai:
+	\begin{itemize}
+		\item \textit{Diritti di partecipazione alla vita della società}: di partecipazione alle assemblee (ordinarie e straordinarie) e contestualmente di voto nelle assemblee;
+		\item \textit{Diritti patrimoniali}: diritto al \textbf{dividendo}, cioè alla ricezione di una parte di utile della società (\textit{se} l'assemblea che approva il bilancio, cioè l'ordinaria, approva la distribuzione utili), e alla restituzione del capitale in caso di scioglimento della società o di riduzione del capitale sociale.
+			Sempre dal punto di vista patrimoniale, chi detiene azioni ordinarie ha l'obbligo di concorrere alle perdite della società. 
+	\end{itemize}
+	\item \textbf{Azioni speciali}, che si dividono in diverse categorie:
+		\begin{itemize}
+			\item \textbf{Azioni privilegiate:} disposte al di sotto delle azioni di risparmio in termini di priorità sulla distribuzione dell'utile (le ordinarie stanno sotto, e tutte le altre categorie di azione stanno ancora sotto); 
+			\item \textbf{Azioni di godimento:} come le azioni di risparmio, ma senza i privilegi in termini di distribuzione dell'utile;
+			\item \textbf{Azioni assegnate ai prestatori di lavoro};
+			\item \textbf{Azioni con prestazioni accessorie};
+			\item \textbf{Azioni a voto limitato};
+			\item \textbf{Azioni di risparmio:} sono le sole che possono essere intestate \textit{al portatore}, e quindi che non sono nominative.
+				Hanno il diritto di partecipazione e intervento in assemblea, ma non il diritto di voto.
+				Il diritto di partecipazione alla vita della società è quindi limitato, mentre è rafforzato quello patrimoniale: infatti assicurano un dividendo annuo minimo pari al 5\% del valore nominale dell'azione, e l'eventuale distribuzione degli utili residui deve essere effettuata in modo che allezioni di risparmio corrisponda il 2\% in più rispetto alle azioni ordinarie.
+
+				Riguardo al \textbf{valore} dell'azione, possiamo fare una parentesi.
+				\begin{enumerate}
+					\item Un azione ha un valore \textbf{nominale} che rappresenta la frazione di capitale sociale che questa rappresenta (cioè il numero di \textit{azioni} in senso stretto che sono erogate in un azione-documento);
+					\item C'è poi il valore di \textbf{emissione}, cioè il prezzo di emisione dell'azione stessa dalla società al momento dell'emissione nel mercato mobiliare primario;
+					\item Infine, c'è il valore di \textbf{mercato}, cioè il prezzo che l'azione ha sul mercato mobiliare secondario, cioè la quotazione del giorno in borsa, determinata dai meccanismi della domanda/offerta.
+				\end{enumerate}
+
+				Tornando alle azioni di risparmio, queste hanno altri due privilegi: sono privilegiate (sopra alle privilegiate stesse) nella distribuzione del'utile e nella restituzione del capitale, e vengono dopo alle azioni ordinarie per la concorrenza alle perdite.
+
+				Le azioni di risparmio sono quelle che si comprano e vendono più spesso nel mercato della borsa, in quanto l'interesse dei possessori è principalmente quello patrimoniale (per cui potrebbero decidere di lucrare sulla differenza in caso di crescita del valore di mercato).
+				Di contro, chi acquista azioni ordinarie cerca solitamente una qualche partecipazione, e quindi \textit{controllo}, sulla società. 
+		\end{itemize}
+\end{itemize}
+
+\subsection{Obbligazioni}
+Le obbligazioni sono titoli di credito nominativi o al portatore che rappresentano frazioni di uguale valore nominale e con uguali diritti di un operazione di finanziamento unitaria a titolo di mutuo.
+In questo, chi detiene le obbligazioni è per le società un creditore, e non un socio.
+
+La differenza fra azioni e obbigazioni si può schematizzare nella seguente tabella:
+
+\begin{table}[H]
+	\center \rowcolors{2}{white}{black!10}
+	\begin{tabular} {p{7cm} | p{7cm}}
+		\bfseries Azione & \bfseries Obbligazione \\
+		\hline 
+		Qualità di socio & Qualità di creditore della società \\
+		Diritto di compartecipare ai risultati & Remunerazione periodica fissa (\textit{interesse}) svincolata dai risultati \\
+		Rimborso del capitale conferito solo in sede di liquidazione, e residuale (cioè se ne rimane un attivo netto). Inoltre la quota di liquidazione è svincolata al valore nominale di conferimento. & Diritto al rimborso del valore nominale del capitale prestato alla scadenza, nella sua totalità. \\
+	\end{tabular}
+\end{table}
+
+Facciamo una nota sulle \textbf{obbligazione convertibili}, cioè obbligazioni che possono essere convertite in azione.
+
+\end{document}
