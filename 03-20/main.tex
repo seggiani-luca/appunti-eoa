@@ -16,9 +16,6 @@
 \usepackage{hyperref}
 \usepackage{standalone}
 
-% cose fluttuanti
-\usepackage{float}
-
 % imposta il titolo
 \title{Appunti Economia ed Organizzazione Aziendale}
 \author{Luca Seggiani}
@@ -188,16 +185,17 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\thispagestyle{empty}
-\renewcommand{\thispagestyle}[1]{}
+% sezione (data)
+\section{Lezione del 20-03-25}
 
-\maketitle
-\input{../02-26/main.tex}
-\input{../02-27/main.tex}
-\input{../03-05/main.tex}
-\input{../03-06/main.tex}
-\input{../03-12/main.tex}
-\input{../03-13/main.tex}
-\input{../03-19/main.tex}
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+\subsection{Il not for profit}
+Nell'ordinamento corrente la società parte di default come \textit{for profit}, cioè a scopo di lucro.
+Abbiamo però accennato all'esistenza di società \textit{not for profit}, e delle più recenti \textbf{società benefit}.
+Notiamo che queste si distinguono poi da altri enti non a scopo di lucro, come ad esempio quelli che si occupano di \textit{volontariato}.
+
 \end{document}
