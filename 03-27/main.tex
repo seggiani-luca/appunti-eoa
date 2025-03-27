@@ -1,0 +1,298 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+		backgroundcolor=\color{black!5}, 
+		commentstyle=\color{codegreen},
+		keywordstyle=\bfseries\color{magenta},
+		numberstyle=\sffamily\tiny\color{black!60},
+		stringstyle=\color{green!50!black},
+		basicstyle=\ttfamily\footnotesize,
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		keepspaces=true,                 
+		numbers=left,                    
+		numbersep=5pt,                  
+		showspaces=false,                
+		showstringspaces=false,
+		showtabs=false,                  
+		tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+		backgroundcolor=\color{black!5}, 
+		basicstyle=\ttfamily\footnotesize\color{black}, 
+		commentstyle=\color{black}, 
+		keywordstyle=\color{black},
+		numberstyle=\color{black!5},
+		stringstyle=\color{black}, 
+		showspaces=false,
+		showstringspaces=false, 
+		showtabs=false, 
+		tabsize=2, 
+		numbers=none, 
+		breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+	{\sffamily\Large\bfseries} 
+	{\thesection}{1em}{} 
+\titleformat{\subsection}
+	{\sffamily\large\bfseries}   
+	{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+	{\sffamily\normalsize\bfseries} 
+	{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 27-03-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Riprendiamo la discussione delle strutture organizzative.
+
+\subsubsection{Diversifizazione e differenziazione}
+I termini \textbf{diversificazione} e \textbf{differenziazione} fanno riferimento alla \textbf{gamma} di prodotti di un'impresa.
+La gamma di prodotti di un'impresa è definita dalle \textbf{linee} di prodotto.
+Ad esempio, nel caso di un impresa che si occupa di abbigliamento, si potrebbe avere una linea di jeans, una linea di camicie, una linea di intimo, ecc... fra di loro distinte.
+Questo tipo di sviluppo in \textbf{verticale} (aumento del numero di linee) rappresenta una \textit{diversificazione}, quindi più linee di prodotto sono disponibili, più l'impresa diversifica.
+
+Chiaramente, aumentando le linee di prodotto le imprese entrano in nuove \textit{linee di business}.
+Ad esempio, l'impresa di abbigliamento di prima potrebbe diversificare entrando nell'arredo casa, ecc...
+
+Guardando alle singole linee di prodotto, invece, ci rendiamo conto che questa può essere più o meno \textbf{profonda}: per \textit{profondità} ci riferiamo al numero di \textbf{varianti} di prodotto all'interno di quella linea.
+Quindi nel caso dei jeans si potrebbe dividere in più tipologie (regular, skinny, ecc...).
+A loro volta, queste tipologie si distinguono in taglie, colore, ecc...
+Si ha quindi che più una linea si divide in \textbf{varianti} di prodotto, più questa è \textit{differenziata}.
+
+\par\smallskip
+
+Tornando al discorso delle \textit{strutture organizzative}, direzioni tipiche di sviluppo delle imprese, man di mano che crescono in dimensioni e complessità, sono quelle di diversificazione e differenziazione. 
+
+\subsubsection{Progettazione della microstruttura}
+Avevamo parlato di \textbf{macro} e \textbf{micro}, e riguardo alla \textit{micro}-struttura, che si occupa di stabilire i meccanismi di coordinazione fra individui e gruppi e di definirne la \textit{specializzazione}, avevamo parlato di specializzazione \textbf{orizzontale} e \textbf{verticale}.
+
+Iniziamo quindi a vedere più nel dettaglio i concetti fondamentali di \textbf{compito}, \textbf{mansione} e \textbf{ruolo}.
+\begin{itemize}
+	\item \textbf{Compito:} l'elemento più piccolo di lavoro che andiamo a considerare, inteso come un insieme di attività o operazioni necessariamente collegate in funzione di proprietà/capacità del lavoro umano;
+	\item \textbf{Mansione:} l'insieme di compiti assegnabili ad una certa \textbf{posizione};
+	\item \textbf{Ruolo:} termine che deriva dal mondo del teatro, che identifica l'insieme delle aspettative sul \textit{comportamento} di una persona in riferimento agli obiettivi dell'intera organizzazione.
+
+		Si parla quindi non solo della \textit{mansione} che un individuo deve svolgere, ma anche sul tipo di \textit{comportamento} che questo deve mantenere nello svolgimento di tale mansione.
+		In questo potremmo dire che la mansione è fondamentalmente \textit{asettica}, mentre il ruolo copre anche le aspettative di comportamento che si hanno sull'individuo che la svolge.
+\end{itemize}
+
+La diversificazione dei compiti assegnabili ad una posizione (la mansione) rappresentava quella che avevamo definito \textbf{specializzazione orizzontale}.
+Veniamo quindi alla \textbf{specializzazione verticale}.
+Questa riguarda la quantità di autonomia che un individuo ha nello svolgimento della sua mansione, e quindi alla quantità di \textit{controllo} che ha sul \textit{come} viene svolta la mansione.
+
+Possiamo individuare la seguente tabella che distingue fra specializzazioni orizzontali e verticali, alte e basse:
+\begin{table}[h!]
+	\center 
+	\begin{tabular} { c | c c }
+		& \bfseries Orizzontale alta & \bfseries Orizzontale bassa \\
+		\hline
+		\bfseries Verticale alta & Mansioni non qualificate & Manager di basso livello \\
+		\bfseries Verticale bassa & Mansioni professionali & Manager \\
+	\end{tabular}
+\end{table}
+
+Abbiamo quindi che i \textbf{manager} hanno bassa specializzazione sia verticale che orizzontale: si occupano quindi di una vasta gamma di compiti con una grande autonomia, con il caso specifico dei manager \textit{di basso livello}, che hanno minore controllo (specializzazione verticale).
+
+Le \textbf{mansioni professionali} (cioè che riguardano i \textit{professionisti}), invece, hanno alta specializzazione orizzontale e bassa specializzazione verticale, cioè si occupano di ambiti specifici ma con un grande livello di autonomia.
+Le mansioni \textit{non qualificate} invece, hanno alta specializzazione sia orizzontale che verticale, cioè compiti specifici con bassa autonomia (in questo non richiedono \textit{qualifiche}).
+
+\subsubsection{Riprogettazione delle mansioni}
+Abbiamo diverse modalità di riprogettazione delle mansioni durante lo sviluppo dell'impresa:
+\begin{itemize}
+	\item \textbf{Job enlargement:} l'ampliamento dei compiti elementari assegnati a ciascuna posizione;
+	\item \textbf{Job enrichement:} aumento della discrezionalità riaccorpando compiti di programmazione e controllo dei risultati, cioè aumento del grado di autonomia;
+	\item \textbf{Job rotation:} rotazione dei compiti ftra gli individui per ottenere minore ripetitività e rigidità.
+\end{itemize}
+
+Abbiamo quindi che se partiamo da mansioni \textit{tayloristiche} (ad alta sepcializzazione orizzontale e verticale), il job enlargement e la job rotation abbassano la specializzazione orizzontale (\textit{mansioni polivalenti}); il job enlargement e il job enrichment abbassano la specializzazione orizzontale e verticale, e infine il job enrichement di per sé abbassa la specializzazione verticale (maggiore autonomia).
+
+\subsubsection{Formalizzazione della mansione}
+Il \textbf{mansionario} è la descrizione verbale dei compiti assegnati ad una \textbf{posizione} od \textbf{unità organizzativo}.
+IN questo il mansionario garantisce il prestatore d'opera ed esplicita nero su bianco le dipendenze e i compiti assegnate alle diverse mansioni.
+Di contro, può rappresentare uno strumento molto rigido, con basso livello di libertà nella diversifiazione delle mansioni. 
+
+\subsubsection{Matrice di responsabilità}
+Un'altro strumento per la formalizzazione delle mansioni è la \textbf{matrice delle responsabilità}, che rappresenta le responsabilità (più propriamente i tipi di coinvolgimento) dei diversi attori riguardo ai diversi compiti.
+La struttura di una matrice di responsabilità è la seguente:
+\begin{table}[h!]
+	\center \rowcolors{2}{white}{black!10}
+	\begin{tabular} {  c | c c }
+		\bfseries Attori / Compiti & A & B \\
+		\hline 
+		1 & Modalità A-1 & Modalità B-1 \\ 
+		2 & Modalità A-2 & Modalià B-2
+	\end{tabular}
+\end{table}
+
+\subsection{Progettazione della macrostruttura}
+La \textbf{macrostruttura} tiene conto delle \textbf{unità organizzative}, cioè l'integrazione delle posizioni e delle unità stesse.
+Quindi, in breve, un unità organizzativa si può intendere come un insieme di posizioni, o di altre unità.
+
+Possiamo definire riguardo alle unità tre parametri:
+\begin{itemize}
+	\item I \textbf{criteri di raggruppamento};
+	\item I \textbf{meccanismi} e i \textbf{ruoli di collegamento};
+	\item La \textbf{formalizzazione} della struttura (\textbf{organigramma}).
+\end{itemize}
+
+\subsubsection{Criteri di raggruppamento}
+I criteri possono essere \textbf{funzionali} o \textbf{divisionali}.
+\begin{itemize}
+	\item \textbf{Criteri funzionali:} in questi la base di raggruppamento per la formazione dell'unita è orientata agli \textit{input}: quindi fa riferimento  alle competenze necessarie, o al tipo di processo di cui si occupa l'unità;
+	\item \textbf{Criteri divisionali:} in questi la base di raggruppamento è invece l'\textit{output}: si guarda al prodotto, al cliente e all'area geografic.
+\end{itemize}
+Notiamo che il problema della scelta dei criteri di raggruppamento si ripete a ciascun livello della struttura.
+
+
+
+\end{document}
