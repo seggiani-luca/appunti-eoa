@@ -16,9 +16,6 @@
 \usepackage{hyperref}
 \usepackage{standalone}
 
-% cose fluttuanti
-\usepackage{float}
-
 % imposta il titolo
 \title{Appunti Economia ed Organizzazione Aziendale}
 \author{Luca Seggiani}
@@ -188,19 +185,76 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\thispagestyle{empty}
-\renewcommand{\thispagestyle}[1]{}
+% sezione (data)
+\section{Lezione del 02-04-25}
 
-\maketitle
-\input{../02-26/main.tex}
-\input{../02-27/main.tex}
-\input{../03-05/main.tex}
-\input{../03-06/main.tex}
-\input{../03-12/main.tex}
-\input{../03-13/main.tex}
-\input{../03-19/main.tex}
-\input{../03-20/main.tex}
-\input{../03-27/main.tex}
-\input{../04-02/main.tex}
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+\subsection{Configurazioni organizzative}
+Iniziamo a vedere gli organigrammi delle configurazioni organizzative più popolari:
+\begin{itemize}
+	\item \textbf{Struttura semplice:} l'\textit{alta direzione} controlla più unità fra di loro separate, ma allo stesso livello.
+		Questa è la struttura tipica di imprese giovani o di piccole dimensioni.
+		I meccanismi di coordinamento principali sono l'adattamento reciproco, la supervisione diretta e la standardizzazione delle capacità.
+		\begin{itemize}
+			\item \textbf{Punti di forza:} flessibilità;
+			\item \textbf{Punti di debolezza:} problemi di conflitti o congestione del vertice.
+		\end{itemize}
+
+	\item \textbf{Struttura funzionale:} una struttura più articolata, dove l'\textit{alta direzione} dirige una serie di \textit{unità funzionali}, che non sono più quello che probabilmente nella struttura semplice erano individui, ma unità di più persone atte ad un unico scopo.
+		E' quindi necessario un criterio di divisione del lavoro basato sul tipo di processo o tecnica, e sulle conoscenze.
+		Questa è la struttura tipica di società di dimensioni piccole-medie.
+		Rimangono dalla struttura semplice, poi, la supervisione diretta e la standardizzazione dei processi di lavoro.
+		\begin{itemize}
+			\item \textbf{Punti di forza:} permette di ottimizzare l'impiego delle risorse umane e tecnologiche concentrando risorse simili e favorendo la specializzazione, ottenendo così \textit{economie di scala}; 
+			\item \textbf{Punti di debolezza:} potrebbe non esserci collaborazione fra i diversi "blocchi" funzionali, cosa che impatta la produttività; inoltre è meno flessibile.
+		\end{itemize}
+		
+	\item \textbf{Struttura divisionale:} una struttura ancora più articolata, dove le unità organizzative sono costituite su un criterio basato sugli \textit{output}.
+		Le unità sono quindi orientate a diversi clienti, prodotti o aree geografiche.
+		Ogni unità divisionale è a sua volta divisa in maniera funzionale, nelle diverse funzioni che essa ha.
+		Si avrà quindi, ad esempio, la divisione orientata al prodotto A, con il \textit{reparto vendite} del prodotto A, il \textit{reparto produzione} del prodotto A, ecc...
+		Questa struttura è tipica di società grandi e sviluppate in diversi settori.
+		\begin{itemize}
+			\item \textbf{Punti di forza:} si recuperà la velocità di risposta al mercato (singole divisioni possono reagire a variazioni riguardo al loro prodotto, mercato, area geografica ecc...);
+			\item \textbf{Punti di debolezza:} si rinuncia in parte all'economia di scala, e in genere alla specializzazione, con efficienze ed incoerenze date dalla duplicazione delle risorse fra le divisioni.
+		\end{itemize}
+\end{itemize}
+
+\subsection{Meccanismi di collegamento}
+Possiamo individuare diversi meccanismi di collegamento, ad esempio:
+\begin{itemize}
+	\item \textbf{Posizioni di collegamento:} posizioni, perlopià informali, che si trovano a "metà" fra più blocchi funzionali; 
+	\item \textbf{Team interfunzionali:} gruppi di lavoro istituzionalizzati generalmente interdisciplinari.
+		Possiamo distingurli ulteriormente rispetto all'\textbf{orizzonte} della collaborazione e alla sua \textbf{intensità}:
+		\begin{table}[h!]
+			\center \rowcolors{2}{white}{black!10}
+			\begin{tabular} { c | c | c }
+				& \bfseries Collaborazione continua & \bfseries Collaborazione discontinua \\ 
+				\hline
+				\bfseries Orizzonte permanente & // & Comitato \\ 
+				\bfseries Orizzonte temporaneao & Task force & Riunione
+			\end{tabular}
+		\end{table}
+	\item \textbf{Manager integratori:} si sovrappongono alla struttura organizzativa esistente, con l'obiettivo di occuparsi di un ambito specifico senza detenere tutte le leve di potere tipiche di un manager di livello superiore.
+\end{itemize}
+
+\subsection{Bilancio}
+Il \textbf{bilancio} è uno schema diviso in due sezioni:
+\begin{itemize}
+	\item \textbf{Stato patrimoniale};
+	\item \textbf{Conto economico}.
+\end{itemize}
+Il bilancio è corredato da un documento testuale, detto \textbf{nota integrativa}.
+
+Lo \textbf{stato di salute} del bilancio può essere valutato secondo diversi indici:
+\begin{itemize}
+	\item Stato della cassa;
+	\item Crediti e debiti;
+	\item Il fatturato;
+	\item Il valore di mercato delle azioni; 
+\end{itemize}
 \end{document}

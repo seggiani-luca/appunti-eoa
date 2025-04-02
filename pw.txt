@@ -1,0 +1,58 @@
+-> Feliz Jueves
+Casi Degeneri
+Trio Simplesso
+GNU Octaviani
+Economia Informatica
+Scienziati delle Merendine
+Fibonacci Nakamoto
+Equilibrio Instabile
+Untrustworthy AI
+Cash Heap
+
+struttura progetto:
+
+[titolo (1 slide)]
+	- Progetto [nome impresa]
+
+[presentazione del gruppo (1 slide)]
+	- nome del gruppo
+	- nome e cognome e indicazione del TL (Team Leader)
+	- ruoli nel progetto
+
+[presentazione d'impresa (2 slide)]
+	- titolo di impresa (individuale, tipologia di società, facente parte di un gruppo, ecc...)
+	- settore, industria, mercati (linee prodotto / servizio)
+	- storia (nascita e modifiche fino ad oggi)
+	- dimensioni
+	- localizzazione
+	- clienti principali
+	- altri dati utili (n. dipendenti, fatturato, acquisizioni, fusioni, cessioni, ecc...)
+
+	N.B.: non dilungarsi troppo!
+
+[governance d'impresa (2 slide)]
+	- struttura societaria e proprietà (familiare, azionariato diffuso, ecc...)
+	N.B.: se parte di un gruppo, illustrarne la struttura (OVS stessa è un gruppo)
+	- tipologia di azioni
+	- cariche sociali (consiglio di amministrazione, amministratore unico/delegato, soci, collegio sindacale, ecc...)
+	- rapporti con stakeholder (responsabilità sociale)
+	- altro (ex. cambi al vertice recenti)
+	- organigramma (struttura semplice, divisionale, matrice, ibrida)
+	N.B.: organigramma e struttura del gruppo sono separati, la struttura del gruppo mostra le imprese che hanno partecipazioni reciproche (Upim, OVS, Stefanel, ecc...); l'organigramma è quello specifico dell'impresa studiata (con consiglio di amministrazione, persone, ecc...).
+	N.B.: l'organigramma non è la governance
+	N.B.: l'organigramma si riferisce ad 1 impresa
+
+[modello di business (1-3 slide)]
+	- business model
+
+[costi e ricavi (1-2 slide)]
+	
+[analisi bilancio (1 slide, non obbligatorio)]
+
+
+(!) dove cercare i dati:
+	- AIDA
+	- LinkedIn
+	- Sole24Ore (situazione 2023/24/25)
+	- Espacenet
+	- Scopus
