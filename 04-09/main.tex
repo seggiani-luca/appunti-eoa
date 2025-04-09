@@ -1,0 +1,328 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+	backgroundcolor=\color{black!5}, 
+	commentstyle=\color{codegreen},
+	keywordstyle=\bfseries\color{magenta},
+	numberstyle=\sffamily\tiny\color{black!60},
+	stringstyle=\color{green!50!black},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+	backgroundcolor=\color{black!5}, 
+	basicstyle=\ttfamily\footnotesize\color{black}, 
+	commentstyle=\color{black}, 
+	keywordstyle=\color{black},
+	numberstyle=\color{black!5},
+	stringstyle=\color{black}, 
+	showspaces=false,
+	showstringspaces=false, 
+	showtabs=false, 
+	tabsize=2, 
+	numbers=none, 
+	breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\sffamily\Large\bfseries} 
+{\thesection}{1em}{} 
+\titleformat{\subsection}
+{\sffamily\large\bfseries}   
+{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+{\sffamily\normalsize\bfseries} 
+{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 09-04-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Concludiamo il discorso sul bilancio parlando dell'\textit{esercizio}.
+
+\subsubsection{Esercizio}
+Alla scorsa lezione avevamo parlato di \textbf{capitale} e \textbf{reddito}, e di come questi avevano importanza sotto l'ipotesi di funzionamento, dando quindi vita al \textbf{bilancio di esercizio}.
+Il bilancio di esercizio viene tenuto lungo il periodo di tempo detto \textbf{esercizio}, corrispondente a l'\textit{anno contabile} (dal 1/1 al 31/12).
+Per l'interesse degli investitori si possono tenere anche bilanci \textit{infra}-annuali, magari a scadenza trimestrale o semestrale.
+Questi hanno principalmente lo scopo di informare gli inverstitori e quindi il mercato finanziario.
+
+\subsection{Operazioni di gestione}
+Iniziamo a vedere nel dettaglio le operazioni di gestione delle società, partendo da quelle \textit{straordinarie}.
+
+\subsubsection{Operazioni di gestione straordinaria}
+Le operazioni di gestione \textbf{straordinaria} possono essere le seguenti:
+\begin{itemize}
+	\item \textbf{Cessione:} vendita in blocco dell'azienda, al termine della quale questa può continuare a vivere in capo ad un nuovo soggetto (\textit{cessazione relativa}) o essere liquidata (\textit{cessazione assoluta}).
+		Queste casistiche si distinguono nella tabella:
+		\begin{table}[h!]
+			\center \rowcolors{2}{white}{black!10}
+			\begin{tabular} { c | c | c }
+				& \bfseries Cessazione assoluta & \bfseries Cessazione relativa \\
+				\hline
+				\bfseries Cessazione volontaria & Liquidazione & Cessione \\ 
+				\bfseries Cessazione coatta & Liquidazione & // \\
+			\end{tabular}
+		\end{table}
+
+		La \textit{liquidazione} può essere \textit{coatta} (\textbf{fallimento}), cioè imposta dalla legge, o volontaria.
+
+		Nel caso della \textit{cessione}, invece, si fa un bilancio apposito, detto \textbf{bilancio di cessazione}, appunto per valutare l'ipotesi di vendita (e dall'altra parte, di acquisto) dell'azienda.
+		Qui, ad esempio, si tiene conto dell'\textit{avviamento} dell'azienda.
+		L'ipotesi di cessione coatta, invece, non è prevista dalla legge.
+
+	\item \textbf{Fusione:} si riduce all'unità il patrimonio di due o più società e si fanno confluire i soci in un unica struttura organizzata (che è una società preesistente o fondata \textit{ex novo}).
+
+		La fusione può in particolare essere:
+		\begin{itemize}
+			\item \textbf{Fusione ropriamente detta:} più società si \textit{estinguono}, cioè cessano di esistere, per dar vita ad una nuova società creata da zero;
+			\item \textbf{Fusione per incorporazione:} più società vengono \textit{incorporate} in una società preesistente.
+		\end{itemize}
+	\item \textbf{Scissione:} trasferimento del patrimonio di una società preesistente a più società, che può essere totale (\textbf{scissione integrale}, o \textit{split-up}) o parziale (\textbf{scissione parziale} o \textit{split-off}).
+		Solo nel caso di scissione parziale, ovviamente, si può scindere ad una sola società (in caso contrario si parlerebbe di qualche tipo di trasformazione).
+
+		La scissione di tipo \textit{split-off} è tipica di società che si specializzano al punto di dover dividere attività e passitvità in altre società.
+		In questo caso, le azioni delle società create vengono assegnate ai soci della società madre, che le scambiano con le azioni della società madre da loro possedute.
+		Chiaramente, se questa scissione lascia la società madre senza attività o passività e una scissione integrale o \textit{split-up}.
+
+	\item \textbf{Scorporo:} sembra simile alla scissione parziale, ma porta alla formazione di \textit{spin-off}.
+		In questo caso la società madre cede la sua azienda o rami di essa ad altre società, formando quello che è effettivamente un \textbf{gruppo aziendale}.
+		In questo caso le azioni delle società scisse restano nella società madre, che diventa \textbf{caopgruppo} di quel gruppo aziendale, cioè una società il cui unico interesse e gestire le altre società del gruppo.
+
+	\item \textbf{Trasformazione:} la società (non s.s.) cambia forma modificando il suo atto costitutivo (magari passa da S.r.l. a S.p.A., ecc...). 
+		Consiste quindi in un cambio di veste giuridica di un soggetto giuridico presistente.
+\end{itemize}
+
+\subsubsection{Operazioni di gestione ordinaria}
+Vediamo quindi nel dettaglio quali sono e in cosa consistono le operazioni di gestione ordinaria della società.
+Abbiamo visto il discorso dello stato patrimoniale, e quindi del capitale e del reddito.
+
+Possiamo pensare ad un esempio che espliciti il funzionamento del meccanismo dello stato patrimoniale.
+Abbiamo che questo reagisce solamente a operazioni esterne, che influenzano:
+\begin{itemize}
+	\item \textbf{Cassa}, \textbf{conti bancari} o \textbf{posta};
+	\item \textbf{Crediti};
+	\item \textbf{Debiti}.
+\end{itemize}
+
+Ad esempio l'estinguimento del debito con i soldi provenienti dalla cassa di un'azienda debitrice rappresenta una \textbf{permutazione finanziaria} che \textit{chiude}, cioè ha somma zero da entrambi i lati del bilancio: i soldi che escono dalla cassa ($\Delta F < 0$) vanno ad estinguere il debito ($\Delta F > 0$), cioè non variano il capitale sociale.
+
+Un'altro movimento finanziario è quello che riguarda il \textbf{capitale Netto}, (\textit{Capitale Sociale} $+ \, \Delta$): ad esempio, un aumento del capitale sociale comporta una variazione economica, che è positiva ($\Delta F > 0$) se si aumenta il capitale (creando nuove azioni) e negativa ($\Delta F < 0$) se si diminusice (annullando azioni esistenti senza aumentare il valore nominale).
+
+Potremmo considerare allora le operazioni di \textbf{finanziamento attinto}, cioè l'operazione mediante la quale l’azienda so dota dei mezzi monetari necessari per lo svolgimento della sua attività, ottenendo appunto un finanzamento da terzi.
+In questo caso si crea un aumento della cassa, ma anche un debito (tra l'altro con possibile interesse) da restituire, ergo il capitale netto resta costante (se non addirittura diminuisce, $\Delta F < 0$, all'estinzione del debito).
+
+\par\smallskip
+
+Vediamo allora se le operazioni \textbf{economiche} $\Delta E$, cioè quelle che riguardano \textit{costi} e \textit{ricavi}, possono cambiare il capitale netto, introducendo variazioni finanziarie $\Delta F$ minori o maggiori di 0.
+
+Queste riguardano quelli che sono i \textbf{valori economici} dell'azienda, che abbiamo già visto essere legati al \textbf{reddito.} 
+Da qqui si possono avere risultati economici:
+\begin{itemize}
+	\item $\Delta E > 0$, si parla di \textbf{ricavi};
+	\item $\Delta E < 0$, si parla di \textbf{costi} che possono essere:
+		\begin{itemize}
+			\item Costi \textbf{di esercizio};
+			\item Costi \textbf{pluriennali}.
+		\end{itemize}
+\end{itemize}
+Notiamo che questa operazioni non provocano variazioni di capitale netto, in quanto il costo dell'\textbf{acquisto} di merci abbatte il valore delle merci, mentre il ricavo dalla \textbf{vendita} di beni è abbattuto dalla perdita di tali beni.
+
+A far variare la ricchezza nel corso dell'esercizio è allora la differenza fra ricavi e costi \textit{di esercizio} alla fine di un certo periodo, cioè:
+$$
+\sum_{i = 1}^n R - \sum_{i = 1}^n C = \Delta E
+$$
+Come abbiamo già visto, se questa $\Delta E$ è positiva, si parla di \textbf{utile}, altrimenti si parla di \textbf{perdita}.
+
+\subsubsection{Operazioni di gestione esterna}
+Le operazioni di cui abbiamo parlato finora soono operazioni di \textbf{gestione esterna}, cioè che guardano a quello che la società scambia con l'esterno.
+Si ha che ogni oeprazione di gestione esterna ha sempre almeno 2 movimenti:
+\begin{enumerate}
+	\item Il primo movimento è di tipo finanziario (movimentazione di cassa, estinzione di debiti, ecc...), cioè un $\Delta F$;
+	\item Il secondo movimento è di tipo finanziario o di tipo economico.
+		\begin{itemize}
+			\item Se il secondo movimento è di tipo finanziario, può \textit{chiudere} (portando quindi a nessuna variazione di capitale netto), quindi rappresentare una \textbf{permutazione finanziaria}, oppure non chiudere, portando ad una variazione economica $\Delta E$ dello stesso segno;
+		\end{itemize}
+\end{enumerate}
+
+# qui c'è un grafico boh
+
+\subsection{Conto economico}
+Il \textbf{conto economico} fa parte assieme allo \textit{stato patrimoniale}, che abbiamo visto finora, del \textbf{bilancio}.
+
+Questo, al contrario dello stato patrimoniale, riporta il valore delle risorse che sono state consumate in un certo periodo (\textit{costi}) per ottenere dei \textit{ricavi}.
+
+# eh poi boh qui finì
+
+\subsection{IVA}
+L'\textbf{IVA}, \textit{Imposta sul Valore Aggiunto}, è un \textbf{imposta} applicata sul valore aggiunto in ogni fase di produzione di un bene.
+
+\par\smallskip
+
+La differenza fra \textit{imposta} e \textit{tassa} è il principio della \textit{controprestazione}: a una tassa corrisponde un bene o servizio che viene erogato dallo stato o dall'ente pubblico a cui la si paga, mentre l'imposta si traduce in un finanziamento dei servizi pubblici generali (pubblici nel senso di forniti anche a chi \textit{non} paga le imposte). 
+
+\par\smallskip
+
+L'IVA viene pagata dal consumatore finale, e si accumula in tutte le fasi di produzione di un certo bene.
+Ad esempio, poniamo che il produttore principale produce un prodotto ad un certo valore, detto \textbf{base imponibile}.
+Su questo valore si calcolerà una percentuale (22\% all'ordinamento corrente) di \textbf{valore aggiunto}, che il produttore deve versare allo stato.
+Questa percentuale dovrà essere pagata, assieme alla base imponibile, da tutte quelle aziende che elaborano tale prodotto, ricalcolata ad ogni passaggio della catena di produzione.
+In verità, vediamo che queste aziende non pagano di tasca propria il valore dell'IVA, ma lo \textit{"anticipano"} al consumatore (che può essere un'altra azienda produttrice o il consumatore finale), aggiungendolo al prezzo del prodotto venduto alla fine della produzione (come aveva fatto il produttore principale stesso).
+Alla fine l'IVA accumulata viene quindi pagata dall'ultimo che entra in possesso del prodotto, cioè il consumatore finale.
+
+
+\end{document}
