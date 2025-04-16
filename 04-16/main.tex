@@ -1,0 +1,283 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+		backgroundcolor=\color{black!5}, 
+		commentstyle=\color{codegreen},
+		keywordstyle=\bfseries\color{magenta},
+		numberstyle=\sffamily\tiny\color{black!60},
+		stringstyle=\color{green!50!black},
+		basicstyle=\ttfamily\footnotesize,
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		keepspaces=true,                 
+		numbers=left,                    
+		numbersep=5pt,                  
+		showspaces=false,                
+		showstringspaces=false,
+		showtabs=false,                  
+		tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+		backgroundcolor=\color{black!5}, 
+		basicstyle=\ttfamily\footnotesize\color{black}, 
+		commentstyle=\color{black}, 
+		keywordstyle=\color{black},
+		numberstyle=\color{black!5},
+		stringstyle=\color{black}, 
+		showspaces=false,
+		showstringspaces=false, 
+		showtabs=false, 
+		tabsize=2, 
+		numbers=none, 
+		breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+	{\sffamily\Large\bfseries} 
+	{\thesection}{1em}{} 
+\titleformat{\subsection}
+	{\sffamily\large\bfseries}   
+	{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+	{\sffamily\normalsize\bfseries} 
+	{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 16-04-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+\subsection{Fattori pluriennali}
+I fattori pluriennali possono essere \textbf{materiali} o \textbf{immateriali}, ad esempio possiamo distinguere:
+\begin{itemize}
+	\item Fattori pluriennali \textbf{materiali}:
+		\begin{itemize}
+			\item Impianto;
+			\item Macchinari;
+			\item Attrezzature;
+			\item Immobili.
+		\end{itemize}
+	\item Fattori pluriennali \textbf{immateriali}:
+		\begin{itemize}
+			\item Brevetti;
+			\item Costi di impianto;
+			\item Avviamento;
+			\item Ricerca e sviluppo;
+			\item Costi di pubblicità.
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{Avviamento}
+L'\textbf{avviamento} merita qualche parola a sé.
+L'avviamento di un'azienda rappresenta un valore utile al momento della vendita (e quindi l'acquisto) di quell'azienda.
+In questo caso si calcola infatti un \textbf{capitale netto di cessione}, cioè dato sì dalla somma algebrica fra attività e passività, ma in prospettiva di cessione, quindi tenendo conto appunto dell'avviamento, cioè il fatto che l'azienda è \textit{avviata}, ha un suo nome, una sua clientela, ecc... e quindi un valore aggiunto rispetto ai soli beni che essa detiene.
+
+\subsubsection{Pubblicità}
+Parlamo anche di \textbf{pubblicità}.
+Si possono fare diversi tipi di pubblicità:
+\begin{itemize}
+	\item Pubblicità per un \textbf{prodotto nuovo} (per quanto sia difficile definire "nuovo", non visto dal mercato, tecnologicamente avanzato, ecc...);
+	\item Pubblicità per prodotti esistenti/migliorati.
+\end{itemize}
+
+I costi dovuti alle spese pubblicitarie vengono recuperati con le vendite dei prodotti pubblicizzati.
+Ora, per prodotti esistenti/migliorati, si può assumere che i costi pubblicitari vengano soddisfatti, nel corso del periodo.
+Per i prodotti nuovi, si deve invece immaginare che la pubblicità diventerà un "innesco" per un prodotto ancora di nicchia, che quindi si ripagherà magari nel corso di diversi anni.
+Questo costo (relativo ai soli prodotti nuovi) viene quindi \textbf{capitalizzato} (portato a stato patrimoniale), e allora considerato come pluriennale.
+Il costo della pubblicità di esercizio resta invece nel reddito di esercizio.
+
+\subsection{Ammortamento}
+L'\textbf{ammortamento} si applica ai \textbf{fattori pluriennali} a \textit{sinistra} dello stato patrimoniale, e ai \textbf{fattori di esercizio} a \textit{destra}, e consiste nel determinare la parte di costo pluriennale (o di fattore di esercizio) consumata nel periodo.
+
+Nel dettaglio del costo pluriennale, quindi, possiamo dire una risorsa avrà un \textbf{costo storico}, dato ad esempio da:
+\begin{itemize}
+	\item Il prezzo della risora;
+	\item Il trasporto;
+	\item L'installazione;
+	\item L'(eventuale) collaudo.
+\end{itemize}
+
+Questo costo storico non viene fattorizzato totalmente al momento dell'ottenimento della risora, ma quindi \textbf{ammortato} nel corso dell'opera.
+Si tiene quindi conto del \textit{valore di consumo} della risorsa nel corso del periodo, dove per ogni periodo si riduce il prezzo storico di una \textbf{quota di ammortamento}.
+Il valore che rimane della risorsa viene detto \textit{valore contabile} o \textbf{valore di libro}.
+
+Si può fare una precisazione sul \textit{corso d'opera} che abbiamo considerato prima.
+Avremo infatti una \textbf{vita utile}, che non corrisponde necessariamente alla \textbf{vita tecnica}, che è il periodo in cui la risorsa è effettivamente utilizzabile (si pensi ad un macchinario funzionante ma obsoleto).
+La vita utile è quindi il periodo in cui la risorsa è \textit{economicamente} funzionante, cioè crea più ricavi che costi.
+
+Quello che si va ad ammortizzare è quindi il costo storico del fattore, a cui si sottrae il \textbf{valore di recupero}, cioè il prezzo a cui si suppone di poter vendere il fattore al termine della sua vita utile (definito chiaramente \textit{ex ante}).
+
+Infine, bisogna tenere conto delle \textbf{modalità di ripartizione} della risorsa, che può essere:
+\begin{itemize}
+	\item A quote lineari;
+	\item A quote descrescenti, il più diffuso (tanto che l'ordinamento corrente prevede l'\textbf{ammortamento accelerato});
+	\item A quote crescenti.
+\end{itemize}
+Di queste quote si tiene conto attraverso il \textbf{fondo ammortamento}.
+
+Al momento della vendita della risorsa si tiene conto del valore di libro di tale risorsa.
+Un eventuale guadagno sul valore di libro è detto \textbf{plusvalenza}, mentre una perdita viene detta \textbf{minusvalenza}.
+La plusvalenza è un valore economico d'esercizio positivo, che quindi va a finre nel conto economico.
+
+Vediamo quindi che il conto economico è stratificato: i ricavi e i costi che vi troviamo possono derivare da diverse \textbf{aree}.
+\begin{itemize}
+	\item Area \textbf{operativa}, divisa in:
+	\begin{itemize}
+	\item Area \textbf{caratteristica} (\textit{core business}), cioè quella che riguarda l'attività propria dell'impresa;
+	\item Area \textbf{accessoria}, cioè quella che contiene ad esempio gli interessi attivi sul denaro che temporaneamente sta nella cassa (investimenti nel mercato finanziario, ecc...).
+	\end{itemize}
+
+	L'area operativa contribuisce all'\textbf{EBIT}, o \textit{risultato operativo}.
+
+	\item Area \textbf{finanziaria}: contiene costi e ricavi di operazioni e finanziamento attinto (capitale di terzi) o concesso.
+		Sono di questo tipo ad esempio gli \textbf{oneri} e i \textbf{proventi} finanziari;
+	\item Area \textbf{fiscale}: riguarda le imposte;
+	\item Area \textbf{straordinaria}: appunto, quella che contiene \textbf{plusvalenze} e \textbf{minusvalenze} di operazioni di vendita (cioè ciò di cui stavamo parlando adesso).
+\end{itemize}
+\end{document}
