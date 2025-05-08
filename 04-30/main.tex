@@ -93,37 +93,37 @@
 \usepackage[table]{xcolor}
 
 \lstdefinestyle{codestyle}{
-		backgroundcolor=\color{black!5}, 
-		commentstyle=\color{codegreen},
-		keywordstyle=\bfseries\color{magenta},
-		numberstyle=\sffamily\tiny\color{black!60},
-		stringstyle=\color{green!50!black},
-		basicstyle=\ttfamily\footnotesize,
-		breakatwhitespace=false,         
-		breaklines=true,                 
-		captionpos=b,                    
-		keepspaces=true,                 
-		numbers=left,                    
-		numbersep=5pt,                  
-		showspaces=false,                
-		showstringspaces=false,
-		showtabs=false,                  
-		tabsize=2
+	backgroundcolor=\color{black!5}, 
+	commentstyle=\color{codegreen},
+	keywordstyle=\bfseries\color{magenta},
+	numberstyle=\sffamily\tiny\color{black!60},
+	stringstyle=\color{green!50!black},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
 }
 
 \lstdefinestyle{shellstyle}{
-		backgroundcolor=\color{black!5}, 
-		basicstyle=\ttfamily\footnotesize\color{black}, 
-		commentstyle=\color{black}, 
-		keywordstyle=\color{black},
-		numberstyle=\color{black!5},
-		stringstyle=\color{black}, 
-		showspaces=false,
-		showstringspaces=false, 
-		showtabs=false, 
-		tabsize=2, 
-		numbers=none, 
-		breaklines=true
+	backgroundcolor=\color{black!5}, 
+	basicstyle=\ttfamily\footnotesize\color{black}, 
+	commentstyle=\color{black}, 
+	keywordstyle=\color{black},
+	numberstyle=\color{black!5},
+	stringstyle=\color{black}, 
+	showspaces=false,
+	showstringspaces=false, 
+	showtabs=false, 
+	tabsize=2, 
+	numbers=none, 
+	breaklines=true
 }
 
 \lstdefinelanguage{javascript}{
@@ -145,14 +145,14 @@
 \usepackage{titlesec}
 
 \titleformat{\section}
-	{\sffamily\Large\bfseries} 
-	{\thesection}{1em}{} 
+{\sffamily\Large\bfseries} 
+{\thesection}{1em}{} 
 \titleformat{\subsection}
-	{\sffamily\large\bfseries}   
-	{\thesubsection}{1em}{} 
+{\sffamily\large\bfseries}   
+{\thesubsection}{1em}{} 
 \titleformat{\subsubsection}
-	{\sffamily\normalsize\bfseries} 
-	{\thesubsubsection}{1em}{}
+{\sffamily\normalsize\bfseries} 
+{\thesubsubsection}{1em}{}
 
 % disponi alberi
 \usepackage{forest}
@@ -357,7 +357,11 @@ Nel business model possiamo individuare diversi elementi:
 	\item La \textbf{proposta di valore};
 	\item I \textbf{canali};
 	\item Le \textbf{relazioni coi clienti};
-	\item I \textbf{flussi di ricavi}.
+	\item I \textbf{flussi di ricavi};
+	\item Le \textbf{risorse chiave};
+	\item Le \textbf{attività chiave};
+	\item Le \textbf{partnership chiave};
+	\item La \textbf{struttura dei costi}.
 \end{itemize}
 
 \subsubsection{Segmenti di clientela}
@@ -403,6 +407,25 @@ Possiamo individuare diversi meccanismi:
 	\item Co-creazione.
 \end{itemize}
 
+Di base, la relazione può distinguersi su \textbf{intensità}, \textbf{frequenza} e \textbf{intimità}:
+\begin{itemize}
+	\item \textbf{Intensità:}
+		\begin{itemize}
+			\item Una relazione a bassa intensità (o \textit{indiretta}) è quella dove il cliente non interagisce con l'azienda, ma con intermediari;
+			\item Di contro una relazione ad altà intensità (o \textit{diretta}) è quella dove il cliente interagisce direttamente con l'azienda.
+		\end{itemize}
+	\item \textbf{Frequenza:}
+		\begin{itemize}
+			\item In una relazione a bassa frequenza si parla principalmente di \textit{transazioni}, cioè acquisti che non creano nessun legame futuro cliente;
+			\item In una relazione ad alta frequenza si svilupppono invece relazioni di \textit{lungo termine} che perdurano nel tempo (ne sono un esempio aziende che producono beni pluriennali, che magari richiedono manutenzione, ecc...).
+		\end{itemize}
+	\item \textbf{Intimità:}
+		\begin{itemize}
+			\item L'intimità riguarda la natura della relazione: alta intimità (o intimità \textit{personale}) significa relazionarsi col personale, quindi con esseri umani;
+			\item Bassa intimità significa invece relazioni automatiche, quindi con operatori automatici, computer, ecc... (ne sono esempi i servizi digitali).
+		\end{itemize}
+\end{itemize}
+
 \subsubsection{Flussi di ricavi}
 Un modello di business può prevedere due tipi di ricavi:
 \begin{itemize}
@@ -414,10 +437,70 @@ Questi possono essere:
 \begin{itemize}
 	\item Vendita di beni;
 	\item Canone d'uso;
+	\item Abbonamenti, che non corrispondono ai canoni d'uso (questi ultimi hanno solitamente natura occasionale, contro la continuità di un abbonamento);
 	\item Quote di iscrizione;
 	\item Prestito/noleggio/leasing;
 	\item Licenza;
 	\item Commissioni di intermediazione;
-	\item Pubblicità.
+	\item Pubblicità;
+	\item Servizi gratuiti: si pensi ad esempio al motore di ricerca Google.
 \end{itemize}
+
+\subsubsection{Risorse chiave}
+Le risorse chiave sono i beni più importanti affinché un modello di business funzioni, e possono includere:
+\begin{itemize}
+	\item Materie prime;
+	\item Particolari servizi;
+	\item Personale specializzato;
+	\item Ecc...
+\end{itemize}
+
+\subsubsection{Attività chiave}
+Le attività chiave sono quelle attività di progettazione, creazione e distribuzione essenziali al funzionamento dell'azienda.
+Ad esempio possiamo notare:
+\begin{itemize}
+	\item Le attività di \textbf{produzione}, fondamentali alle aziende manufatturiere;
+	\item Le attività di \textbf{problem solving}, orientate alla risoluzione di problemi per i singoli clienti, tipiche di attività di consulenza e di servizi;
+	\item Le attività riguardanti la \textbf{piattaforma}, per aziende che forniscono appunto \textit{piattaforme}: si pensi ai servizi online che richiedono costante manutenzione e moderazione. 
+\end{itemize}
+
+\subsubsection{Partnership chiave}
+Le partnership chiave sono quelle relazioni con fornitori, intermediari se non addirittura concorrenti fondamentali all'attività dell'azienda. 
+
+Possiamo distinguere:
+\begin{itemize}
+	\item Partnership fra concorrenti, le cosiddette \textbf{coopetition};
+	\item Partnership per creare nuove proposte di valore, ad esempio fra due aziende di settori diversi che creano un prodotto combinato;
+	\item Partnership \textit{buyer-supplier}, fra fornitori di lunga data;
+	\item Partnership per ridurre i costi o il rischio.
+\end{itemize}
+
+\subsubsection{Struttura dei costi}
+La sruttura dei costi riguarda i costi che l'azienda deve sopportare nell'ipotesi di funzionamento.
+
+Questi possono essere:
+\begin{itemize}
+	\item \textbf{Variabili} sulla base della produzione;
+	\item \textbf{Fissi}, cioè slegati dalla produzione.
+\end{itemize}
+
+Potremo dire che la parte di \textit{destra} del modello di business, cioè quella contenente:
+\begin{itemize}
+	\item I egmenti di clientela;
+	\item La proposta di valore;
+	\item I canali;
+	\item Le relazioni coi clienti;
+	\item I flussi di ricavi.
+\end{itemize}
+è detta parte del \textbf{valore}, mentre la parte si \textit{sinistra}, cioè quella contenente:
+\begin{itemize}
+	\item Le risorse chiave;
+	\item Le attività chiave;
+	\item Le partnership chiave;
+	\item La struttura dei costi.
+\end{itemize}
+è detta parte dell'\textbf{efficienza}.
+
+Di aziende incentrate sulla parte del valore si dice che sono \textbf{value-driven}, mentre di aziende incentrate sulla parte dell'efficienza si dice che sono \textbf{cost-driven}.
+
 \end{document}
