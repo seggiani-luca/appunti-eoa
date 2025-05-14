@@ -1,0 +1,303 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=8em]{geometry}
+
+% usa i pacchetti per la scrittura in italiano
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+
+% usa i pacchetti per la formattazione matematica
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% usa altri pacchetti
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{standalone}
+
+% imposta il titolo
+\title{Appunti Economia ed Organizzazione Aziendale}
+\author{Luca Seggiani}
+\date{2025}
+
+% disegni
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% imposta lo stile
+% usa helvetica
+\usepackage[scaled]{helvet}
+% usa palatino
+\usepackage{palatino}
+% usa un font monospazio guardabile
+\usepackage{lmodern}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{lmtt}
+
+% disponi il titolo
+\makeatletter
+\renewcommand{\maketitle} {
+	\begin{center} 
+		\begin{minipage}[t]{.8\textwidth}
+			\textsf{\huge\bfseries \@title} 
+		\end{minipage}%
+		\begin{minipage}[t]{.2\textwidth}
+			\raggedleft \vspace{-1.65em}
+			\textsf{\small \@author} \vfill
+			\textsf{\small \@date}
+		\end{minipage}
+		\par
+	\end{center}
+
+	\thispagestyle{empty}
+	\pagestyle{fancy}
+}
+\makeatother
+
+% disponi teoremi
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{theorem}[2][]{%
+	colback=blue!10, 
+	colframe=blue!40!black, 
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries, 
+	title=Teorema~\thetcbcounter: #2, 
+	#1
+}
+
+% disponi definizioni
+\newtcolorbox[auto counter, number within=section]{definition}[2][]{%
+	colback=red!10,
+	colframe=red!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Definizione~\thetcbcounter: #2,
+	#1
+}
+
+% disponi problemi
+\newtcolorbox[auto counter, number within=section]{problem}[2][]{%
+	colback=green!10,
+	colframe=green!40!black,
+	sharp corners=northwest,
+	fonttitle=\sffamily\bfseries,
+	title=Problema~\thetcbcounter: #2,
+	#1
+}
+
+% disponi codice
+\usepackage{listings}
+\usepackage[table]{xcolor}
+
+\lstdefinestyle{codestyle}{
+		backgroundcolor=\color{black!5}, 
+		commentstyle=\color{codegreen},
+		keywordstyle=\bfseries\color{magenta},
+		numberstyle=\sffamily\tiny\color{black!60},
+		stringstyle=\color{green!50!black},
+		basicstyle=\ttfamily\footnotesize,
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		keepspaces=true,                 
+		numbers=left,                    
+		numbersep=5pt,                  
+		showspaces=false,                
+		showstringspaces=false,
+		showtabs=false,                  
+		tabsize=2
+}
+
+\lstdefinestyle{shellstyle}{
+		backgroundcolor=\color{black!5}, 
+		basicstyle=\ttfamily\footnotesize\color{black}, 
+		commentstyle=\color{black}, 
+		keywordstyle=\color{black},
+		numberstyle=\color{black!5},
+		stringstyle=\color{black}, 
+		showspaces=false,
+		showstringspaces=false, 
+		showtabs=false, 
+		tabsize=2, 
+		numbers=none, 
+		breaklines=true
+}
+
+\lstdefinelanguage{javascript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+% disponi sezioni
+\usepackage{titlesec}
+
+\titleformat{\section}
+	{\sffamily\Large\bfseries} 
+	{\thesection}{1em}{} 
+\titleformat{\subsection}
+	{\sffamily\large\bfseries}   
+	{\thesubsection}{1em}{} 
+\titleformat{\subsubsection}
+	{\sffamily\normalsize\bfseries} 
+	{\thesubsubsection}{1em}{}
+
+% disponi alberi
+\usepackage{forest}
+
+\forestset{
+	rectstyle/.style={
+		for tree={rectangle,draw,font=\large\sffamily}
+	},
+	roundstyle/.style={
+		for tree={circle,draw,font=\large}
+	}
+}
+
+% disponi algoritmi
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+% disponi numeri di pagina
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyfoot[L]{\sffamily{\thepage}}
+
+\makeatletter
+\fancyhead[L]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@title \ \@date}}} 
+\fancyhead[R]{\raisebox{1ex}[0pt][0pt]{\sffamily{\@author}}}
+\makeatother
+
+\begin{document}
+
+% sezione (data)
+\section{Lezione del 14-05-25}
+
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Riprendiamo la trattazione dei costi per destinazione, introducendo il concetto di \textbf{oggetto di costo}.
+
+\subsubsection{Oggetto di costo}
+L'oggetto di costo è ciò in relazione a cui valutiamo i costi, cioè lo scopo per il quale i costi sono misurati.
+Nel caso più semplice, questo è un \textbf{prodotto}.
+Il \textbf{costo pieno} (\textit{full cost}) di un oggetto di costo dipende da tutte le risorse utilizzate per tale oggetto di costo.
+
+Il costo può essere:
+\begin{itemize}
+	\item \textbf{Diretto:} riconducibile a un singolo oggetto di costo;
+	\item \textbf{Indiretto:} sempre legato alla produzione, ma non necessariamente riconducibile a un singolo oggetto di costo.
+\end{itemize}
+
+Abbiamo quindi che la produzione genera chiaramente dei \textbf{costi di produzione}, che possono essere diretti o indiretti, fra sostanzialmente 3 componenti:
+\begin{itemize}
+	\item Materiali diretti;
+	\item Manodopera diretta;
+	\item Costi generali di produzione: questi sono indiretti, in quanto non riguardano direttamente il singolo prodotto (ma sono connessi al funzionamento della fabbrica, cioè ad eesmpio riscaldamento, ammortamento strutture produttive, manutenzione macchinari, ecc...).
+		Possono classificare questi in:
+		\begin{itemize}
+			\item Materiali indiretti;
+			\item Manodopera indiretta;
+			\item Altre risorse consumate in produzione non legate al prodotto.
+		\end{itemize}
+\end{itemize}
+
+Restano quindi fuori i \textbf{costi non di produzione}, che classifichiamo in:
+\begin{itemize}
+	\item Costi di marketing/vendita: costi necessari per ottenere l'ordine e consegnare il prodotto:
+	\item Costi amministrativi: costi generali per mantenere gli uffici amministrativi;
+	\item Costi generali, ad esempio interessi, ricerca e sviluppo, eccetera.
+\end{itemize}
+
+\par\smallskip
+
+Vediamo che l'idea di oggetto di costo si può estendere oltre i singoli prodotti: ad esempio possiamo prendere come oggetti di costo:
+\begin{itemize}
+	\item Prodotti (il caso visto adesso);
+	\item Linee di prodotti;
+	\item Marchi;
+	\item Agenti (venditori);
+	\item Canali di distribuzione;
+	\item Servizi;
+	\item Progetti;
+	\item Attività;
+	\item Unità organizzative.
+\end{itemize}
+
+\subsubsection{Classificazione dei costi}
+
+Abbiamo quindi che il costo si classifica come:
+\begin{itemize}
+	\begin{itemize}
+		\item[] Materie prime;
+		\item[$+$] Costo del lavoro diretto;
+	\end{itemize}
+	$=$ \textbf{Costo primo} (o diretto) di prodotto;
+	\begin{itemize}
+		\item[$+$] Costi di produzione indiretti;
+	\end{itemize}
+	$=$ Costo pieno industriale;
+	\begin{itemize}
+		\item[$+$] costi non di produzione;
+	\end{itemize}
+	$=$ Costo pieno aziendale.
+\end{itemize}
+
+Dove notiamo che:
+\begin{itemize}
+	\item Il \textbf{costo pieno industriale}, o \textit{costo inventariabile} o \textit{costo di prodotto} è il valore delle risorse associabili, in modo diretto o indiretto, a un prodotto, perciò valorizza le rimanenze;
+	\item Il \textbf{costo di periodo} (costi non di produzione) comprende attività non sostenute allo scopo diretto di produzione, cioè associabili alla realizzazione di un prodotto (sono fra queste amministrazione, ricerca e sviluppo, ecc...).
+\end{itemize}
+
+\subsubsection{Classificazione quantitativa dei costi}
+
+Abbiamo quindi che vale, in linea generale, la seguente classificazione dal punto di vista quantitativo:
+\begin{itemize}
+	\item \textbf{Costi diretti:} sono ricondotti specificamente all'oggetto di costo in quanto sono da questo causati:
+		\begin{itemize}
+			\item Quantità del fattore effettivamente impiegata dall'oggetto $\times$ il suo prezzo;
+			\item Valore di fattori produttivi i cui servizi sono impiegati in modo esclusivo dall'oggetto di costo.
+		\end{itemize}
+	\item \textbf{Costi indiretti:} sono causati da 2 o più oggetti di costo, e quindi non sono direttamente riconducibili a nessun oggetto di costo singolo.
+		In questo caso la quantificazione rispetto ai singoli è impossibile, o economicamente non conveniente.
+\end{itemize}
+
+\subsubsection{Cost driver}
+Riguardo alle variazioni di livello di attività, i costi possono essere:
+\begin{itemize}
+	\item \textbf{Fissi}, cioè che rimangono inalterati in un intervallo significativo di variazione del livello di attività.
+		Questi possono essere:
+		\begin{itemize}
+			\item Costi fissi \textbf{impegnati}: importanti sul lungo termine, non si possono tagliare sul breve termine senza danneggiare gravemente la redditività;
+			\item Costi fissi \textbf{discrezionali}: importanti sul breve termine, possono essere tagliati per brevi periodi con danni minimi alla redditività.
+		\end{itemize}
+	\item \textbf{Variabili}, cioè che si modificano assieme al livello di attività.
+		Fra questi possiamo distinguere:
+		\begin{itemize}
+			\item Costi variabili \textbf{lineari}: che scalano come il cost driver;
+			\item Costi variabili \textbf{progressivi}: che scalano sempre più al crescere del cost driver, ad esempio manodopera (grazie a straordinari, ecc...);
+			\item Costi variabili \textbf{degressivi}: che scalano sempre meno al crescere del cost driver, ad esempio materia prima (grazie a sconti di quantità, acquisto all'ingrosso, ecc...).
+		\end{itemize}
+	\item \textbf{Misti}, cioè semivariabili o a scalini (semifissi o variabili al gradino, insomma dati da combinazioni di costi variabili e costi fissi);
+\end{itemize}
+
+A spiegare tale variazioni di livello sono i cosiddetti \textbf{cost driver}, presi all'interno di un intervallo di variazione (\textbf{area di rilevanza}), su un certo \textbf{periodo} di tempo.
+
+\end{document}
