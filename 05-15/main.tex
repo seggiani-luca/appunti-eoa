@@ -16,9 +16,6 @@
 \usepackage{hyperref}
 \usepackage{standalone}
 
-% cose fluttuanti
-\usepackage{float}
-
 % imposta il titolo
 \title{Appunti Economia ed Organizzazione Aziendale}
 \author{Luca Seggiani}
@@ -188,27 +185,56 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\thispagestyle{empty}
-\renewcommand{\thispagestyle}[1]{}
+% sezione (data)
+\section{Lezione del 15-05-25}
 
-\maketitle
-\input{../02-26/main.tex}
-\input{../02-27/main.tex}
-\input{../03-05/main.tex}
-\input{../03-06/main.tex}
-\input{../03-12/main.tex}
-\input{../03-13/main.tex}
-\input{../03-19/main.tex}
-\input{../03-20/main.tex}
-\input{../03-27/main.tex}
-\input{../04-02/main.tex}
-\input{../04-03/main.tex}
-\input{../04-09/main.tex}
-\input{../04-10/main.tex}
-\input{../04-16/main.tex}
-\input{../04-30/main.tex}
-\input{../05-08/main.tex}
-\input{../05-14/main.tex}
-\input{../05-15/main.tex}
+% stili pagina
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+% testo
+Riprendiamo la trattazione dei costi.
+
+\subsubsection{Costi totali e unitari}
+Facciamo una distinzione fra \textbf{costi totali} $CT$ e \textbf{costi unitari} $CTu$.
+Assunta una relazione lineare:
+\begin{itemize}
+	\item All'aumentare della quantità $Q$ (o \textit{volume}, di produzione), il costo unitario resta costante;
+	\item Il costo totale risulta uguale ai costi unitari per la quantità $CTu \times Q$, più i costi fissi $CF$.
+\end{itemize}
+
+Lo sfruttamento di costi unitari decrescenti su grandi volumi di produzione $Q$ viene detto \textbf{economia di volume}.
+
+\subsubsection{Analisi Costi-Volume-Risultato}
+L'analisi costi-volume-risultato (\textbf{CVR}) serve a valutare il cosiddetto \textit{break-even point}, cioè il punto in cui valutando i costi per un certo volume di produzione, e il risultato ottenuto dalla vendita, si ritorna in pari.
+
+In particolare, quindi, vogliamo valutare come deve modificarsi il livello di output (prodotto) in modo che:
+\begin{itemize}
+	\item Si raggiunga il pareggio fra costi e ricavi;
+	\item Si ottengano certi obiettivi prefissati di reddito operativo.
+\end{itemize}
+
+Il modello fa le seguenti ipotesi:
+\begin{itemize}
+	\item $CT = CVu \times Q + CF$;
+	\item $RT = p \times Q$;
+	\item Si vende tutto il prodotto (no rimanenze);
+	\item Si considera l'azienda come \textit{mono-prodotto} o si considera solo un certo mix di vendite costante;
+	\item Si fa un analisi di breve periodo;
+	\item Si trascurano gli effetti fiscali e della gestione straordinaria.
+\end{itemize}
+
+Il modello si risolve facilmente come:
+$$
+CT = RT \implies CV u \times Q + CF = p \times Q
+$$
+$$
+Q(p - CV u) = CF: lmplies Q_{bep} = \frac{CF}{p - CV u}
+$$
+dove $Q_{bep}$ è appunto il punto di break even, e $p - CVu$ rappresenta il \textbf{margine di contribuzione}, cioè il ricavo sul singolo prodotto.
+
+\subsection{Analisi di bilancio}
+Valutare il solo \textbf{utile} è troppo limitante nell'analisi di un'azienda: l'\textbf{analisi di bilancio} serve a contestualizzare fra di loro diversi valori di bilancio. 
+In particolare, parleremo di analisi di bilancio \textit{per indici}, cioè che calcola \textbf{indici} o \textit{rapporti} fra diverse grandezze, secondo una certa logica, che danno informazioni sullo \textbf{stato di salute} dell'azienda.
+
 \end{document}
