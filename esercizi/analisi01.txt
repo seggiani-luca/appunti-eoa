@@ -1,0 +1,30 @@
+				1998			1999
+				--------------
+UTILE		450				400
+E				3300			5500
+ROE			13.6%			7.2%
+CI			6600			7900
+ROI			21%				20%
+MTF			3300			2400
+ROD			15%				33%			% questo è peggiorato
+q				1					0.43
+S				0.5				0.5
+
+
+%%
+
+ROE = RN / E (return over equity)
+E = CAP S. + RISERVE
+
+% area operativa
+
+ROI = EBIT / CI (reddito su c. di investimento)
+CI = CAP S. + RISERVE + MEZZI DI TERZI FINANZIARI
+
+% area finanziaria
+
+ROD = OF / MEZZI DI TERZI FINANZIARI (return over debt)
+q = MTF / MP
+
+% area straordinaria
+S = RN / RL
