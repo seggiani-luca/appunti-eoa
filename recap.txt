@@ -1,0 +1,59 @@
+MODULI TEST:
+- MOD 1 (bilancio analisi e costi)
+- MOD 2 governance
+
+MOD 1
+come nasce un impresa
+definizione di impresa
+operazioni ORDINARIE e STRAORDINARIE
+ORDINARIE:
+op. di acquisto 
+produzione
+op. di vendita
+finanziamento attinto / concesso
+
+-> hyp. di funzionamento
+
+STRAODINARIE:
+cessione
+scorporo
+fusione
+ecc...
+
+BILANCI:
+possono essere
+ORDINARI -> op. ordinari / hyp. fuzionamento
+STRAORDINARI -> straord.
+SPECIALI -> ...
+
+CAP PROPRIO = CAP SOCIALE (sottoscritto dai soci) + RISERVE (utili o capitali)
+RISERVE:
+II – Riserva da soprapprezzo delle azioni
+III – Riserve di rivalutazione
+IV – Riserve legali (solo società di capitali)
+V – Riserve statutarie
+VI – Riserva per azioni proprie in portafoglio
+VII – Altre riserve (elencate distintamente)
+VIII – Utili o perdite portati a nuovo
+IX – Utile o perdita dell’esercizio. 
+
+FATTORI PLURIENNALI o DI ESERCIZIO
+DI ESERCIZIO (?) -> tutto conto economico
+PLURIENNALI -> costo di periodo (AMMORTAMENTO) -> nello stato patrimoniale c'è ammortamento finora
+	-> vendita fatt. pluriennali si crea plusvalenza o minusvalenza (conto economico in area straord.)
+
+MODELLO CONTABILE: gestione esterna, movimenti finanziari
+	FA
+A P	V
+	FC
+
+valutazione STATO DI SALUTE: abbiamo visto MODELLO CONTABILE 
+	-> dice cosa è successo negli ultimi (solitamente) 12 mesi
+
+REDDITO <-> CAPITALE, REDDITO è \Delta CAPITALE
+come si vede il reddito? guardando i cambiamenti che non sono permutazioni, ma danno RICAVI o COSTI
+
+AZIONI:
+	strategiche -> attivo non corrente
+	speculative -> attiv corrente
+	proprie-> attivo non corrente, o patrimonio netto in IAS-IFRS
